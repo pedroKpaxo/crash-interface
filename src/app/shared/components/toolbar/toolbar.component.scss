@@ -1,0 +1,59 @@
+:host {
+    width: 100%;
+
+}
+
+.toolbar-wrap {
+    background: #242424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-help {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    .material-symbols-outlined {
+        font-size: 1.5rem;
+        margin-right: 8px;
+        color: #757c7e;
+        cursor: pointer;
+    }
+}
+
+.logo {
+    color: #ffc107;
+    margin-left: 8px;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.material-symbols-outlined {
+    font-size: 1.5rem;
+    margin-right: 8px;
+    color: #ffc107;
+    cursor: pointer;
+}
+
+.balance-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    span.balance {
+        color: #02c22b;
+        font-size: 1rem;
+        margin-right: 8px;
+        font-weight: 600;
+    }
+
+    span.currency {
+        color: #b6bbbd;
+        font-weight: 600;
+    }
+}
