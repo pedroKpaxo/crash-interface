@@ -1,0 +1,6 @@
+<div class="segment-container">
+    <div *ngFor="let segment of segments" class="segment" [class.activated]="segment === selectedSegment"
+        (click)="selectSegment(segment)">
+        {{ segment }}
+    </div>
+</div>

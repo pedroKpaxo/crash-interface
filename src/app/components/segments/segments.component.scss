@@ -1,0 +1,27 @@
+.segment-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+}
+
+.segment {
+    cursor: pointer;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    color: #fff;
+
+}
+
+.segment:not(:last-child) {
+    margin-right: 10px;
+}
+
+.activated {
+    background-color: #007bff;
+}

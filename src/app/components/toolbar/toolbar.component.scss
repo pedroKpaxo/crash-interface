@@ -1,6 +1,5 @@
 :host {
     width: 100%;
-
 }
 
 .toolbar-wrap {
@@ -8,6 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 38px;
 }
 
 .logo-help {
@@ -30,7 +30,7 @@
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .material-symbols-outlined {
