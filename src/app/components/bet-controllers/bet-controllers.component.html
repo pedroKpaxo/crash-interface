@@ -1,4 +1,17 @@
 <div class="controls-wraper">
-  <app-bet-buttons></app-bet-buttons>
-  <app-bet-buttons></app-bet-buttons>
+  <app-bet-buttons> </app-bet-buttons>
+  <app-bet-buttons [isMain]="false" *ngIf="hasSecond === true">
+  </app-bet-buttons>
+
+  <div
+    class="add-btn"
+    *ngIf="isMain === true && hasSecond === false; else minus"
+  >
+    <button class="btn btn-sucess" (click)="toggleAddController()">+</button>
+  </div>
+  <ng-template #minus>
+    <div class="add-btn">
+      <button class="btn btn-warn" (click)="toggleAddController()">-</button>
+    </div>
+  </ng-template>
 </div>
