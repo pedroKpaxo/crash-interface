@@ -7,6 +7,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BetButtonsComponent } from './components/bet-buttons/bet-buttons.component';
 import { SegmentsComponent } from './components/segments/segments.component';
 import { BetSpinnerComponent } from './components/bet-spinner/bet-spinner.component';
+import { LiveBetsComponent } from './components/live-bets/live-bets.component';
+import { BetControllersComponent } from './components/bet-controllers/bet-controllers.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,12 @@ import { BetSpinnerComponent } from './components/bet-spinner/bet-spinner.compon
     BetButtonsComponent,
     GameComponent,
     SegmentsComponent,
-    BetSpinnerComponent
+    BetSpinnerComponent,
+    LiveBetsComponent,
+    BetControllersComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

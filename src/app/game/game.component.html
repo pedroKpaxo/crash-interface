@@ -1,26 +1,9 @@
 <div class="container">
-    <div class="live-bets">
-        <div class="status">
-            <span class="status-text">Live Bets</span>
-            <span class="status-text">0</span>
-        </div>
-        <div class="bets-list">
-            <div class="header">
-                <span class="user">User</span>
-                <span class="bet">Bet</span>
-                <span class="multiplier">X</span>
-                <span class="out">Cash Out</span>
-            </div>
-        </div>
+  <app-live-bets></app-live-bets>
+  <div class="gameplay">
+    <div #wrap class="canvas-wrapper">
+      <canvas #play id="play"></canvas>
     </div>
-    <div class="gameplay">
-
-        <div class="canvas-wrapper">
-            <canvas #play id="play"></canvas>
-        </div>
-        <div class="controls-wraper">
-            <app-bet-buttons></app-bet-buttons>
-            <app-bet-buttons></app-bet-buttons>
-        </div>
-    </div>
+    <app-bet-controllers></app-bet-controllers>
+  </div>
 </div>
