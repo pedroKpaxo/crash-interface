@@ -3,24 +3,24 @@
     <span class="status-text">Live Bets</span>
     <span class="status-text">0</span>
   </div>
+  <div class="header">
+    <span class="user">User</span>
+    <span class="bet">Bet</span>
+    <span class="multiplier">X</span>
+    <span class="out">Cash Out</span>
+  </div>
   <div class="bets-list">
-    <div class="header">
-      <span class="user">User</span>
-      <span class="bet">Bet</span>
-      <span class="multiplier">X</span>
-      <span class="out">Cash Out</span>
-    </div>
     <div class="bet-items">
-      <div class="bet-item">
+      <div class="bet-item" *ngFor="let bet of liveBets">
         <div class="user">
           <div class="avatar flex">
             <img src="https://picsum.photos/200" alt="avatar" />
           </div>
-          <span class="name">User</span>
+          <span class="name">{{ bet.user }}</span>
         </div>
-        <div class="bet">10.00</div>
-        <div class="multiplier">11.5</div>
-        <div class="out">115.00</div>
+        <div class="bet">{{ bet.amount }}</div>
+        <div class="multiplier">{{ bet.odds }}</div>
+        <div class="out">{{ bet.cashOut }}</div>
       </div>
     </div>
   </div>
