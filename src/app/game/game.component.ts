@@ -44,59 +44,49 @@ export class GameComponent implements OnInit {
     };
     this.context = this.canvas.nativeElement.getContext('2d')!;
     // sets the width and height of the canvas on resize
-    window.onresize = () => {
-      // stop animation
-      this.context.clearRect(
+
+    // Start the star at the bottom middle of the this.canvas.nativeElement
+    const star = new Star(1, 1, 1); // Adjust velocity as needed
+    const scale = 4;
+    const widthMiddle = this.canvas.nativeElement.width / scale;
+    const heightMiddle = this.canvas.nativeElement.height / scale;
+    this.canvas.nativeElement.width = this.canvas.nativeElement.width * scale;
+    this.canvas.nativeElement.height = this.canvas.nativeElement.height * scale;
+
+    //this.canvas.nativeElement.style.width = this.canvas.nativeElement.width + 'px';
+    //this.canvas.nativeElement.style.height = this.canvas.nativeElement.height + 'px';
+    this.canvas.nativeElement.style.aspectRatio = 'auto';
+
+    // Set the canvas for maximum resolution
+    this.context.imageSmoothingEnabled = true;
+    this.context.imageSmoothingQuality = 'high';
+    // Imporve text quality and bold font
+    this.context.font = 'bold 80px Arial';
+    this.context.fillStyle = 'white';
+
+    const animate = () => {
+      requestAnimationFrame(animate);
+
+      this.context!.clearRect(
         0,
         0,
         this.canvas.nativeElement.width,
         this.canvas.nativeElement.height,
       );
-      this.canvas.nativeElement.width = this.canvas.nativeElement.width;
-      this.canvas.nativeElement.height = this.canvas.nativeElement.height;
+      // Write the multiplier in the middle of the this.canvas.nativeElement
+      this.context.textAlign = 'center';
+      star.draw(this.context);
+      star.update(
+        this.canvas.nativeElement.width,
+        this.canvas.nativeElement.height,
+      );
+      this.context.fillText(
+        this.multiplier + 'x',
+        widthMiddle * scale * 2,
+        heightMiddle * scale * 2,
+      );
     };
 
-    if (this.context) {
-      // Start the star at the bottom middle of the this.canvas.nativeElement
-      const star = new Star(1, 1, 1); // Adjust velocity as needed
-      const widthMiddle = this.canvas.nativeElement.width / 2;
-      const heightMiddle = this.canvas.nativeElement.height / 2;
-      const scale = 2;
-      this.canvas.nativeElement.width = this.canvas.nativeElement.width * scale;
-      this.canvas.nativeElement.height =
-        this.canvas.nativeElement.height * scale;
-      this.canvas.nativeElement.style.width =
-        this.canvas.nativeElement.width + 'px';
-      this.canvas.nativeElement.style.height =
-        this.canvas.nativeElement.height + 'px';
-      this.canvas.nativeElement.style.aspectRatio = 'auto';
-      // Set the canvas for maximum resolution
-      this.context.imageSmoothingEnabled = true;
-      this.context.imageSmoothingQuality = 'high';
-      // Imporve text quality and bold font
-      this.context.font = 'bold 60px Arial';
-      this.context.fillStyle = 'white';
-
-      const animate = () => {
-        requestAnimationFrame(animate);
-
-        this.context!.clearRect(
-          0,
-          0,
-          this.canvas.nativeElement.width,
-          this.canvas.nativeElement.height,
-        );
-        // Write the multiplier in the middle of the this.canvas.nativeElement
-        this.context.fillStyle = 'white';
-        this.context.textAlign = 'center';
-        this.context.fillText(
-          this.multiplier + 'x',
-          widthMiddle * 2,
-          heightMiddle * 2,
-        );
-      };
-
-      animate();
-    }
+    animate();
   }
 }

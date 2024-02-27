@@ -1,11 +1,16 @@
-<app-toolbar></app-toolbar>
+<div class="main-wrap">
+  <app-toolbar></app-toolbar>
 
-<div class="container">
-  <app-live-bets></app-live-bets>
-  <div class="gameplay">
-    <div #wrap class="canvas-wrapper">
-      <canvas #play id="play"></canvas>
+  <div class="container">
+    <app-live-bets></app-live-bets>
+    <div class="gameplay">
+      <div #wrap class="canvas-wrapper">
+        <canvas #play id="play"></canvas>
+      </div>
+      <app-bet-controllers></app-bet-controllers>
     </div>
-    <app-bet-controllers></app-bet-controllers>
+  </div>
+  <div class="footer">
+    <p>developed by OPA Games</p>
   </div>
 </div>
